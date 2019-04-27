@@ -1,0 +1,5 @@
+rootProject.name = 'nativedemo'
+include 'nativejni'
+include 'nativejna'
+include 'nativejnr'
+

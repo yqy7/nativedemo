@@ -1,0 +1,10 @@
+
+task generateJniHeaders(type:Exec) {
+    def classpath = sourceSets.main.output.getClassesDir()
+    def nativeIncludes = "src/jni"
+    commandLine "javah", "-d", nativeIncludes, "-classpath", classpath, "com.github.yqy7.nativejni.TestJni"
+}
+
+task compileNative(type: Exec) {
+    commandLine 'gcc', '-dynamiclib', '-o', 'libhello.jnilib', 'src/jni/hello.c', '-framework', 'JavaVM', '-I'+System.env['JAVA_HOME']+'/include','-I'+System.env['JAVA_HOME']+'/include/darwin'
+}
