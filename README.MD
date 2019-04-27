@@ -6,4 +6,4 @@ java调用c库的三种方式：
 比较
 - 使用简单程度: jnr > jna > jni
 - 依赖jar包数量: jnr > jna > jni
-
+- 性能: jni > jnr > jna
